@@ -5,11 +5,13 @@ class InputPersonalizado extends StatelessWidget {
 
   String hint;
   TextInputType? tipoTeclado;
+  TextEditingController? textEditingController;
 
   InputPersonalizado({
     super.key,
     required this.hint,
-    this.tipoTeclado
+    this.tipoTeclado,
+    this.textEditingController
   });
 
   @override
@@ -17,6 +19,7 @@ class InputPersonalizado extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextFormField(
+        controller: textEditingController,
         keyboardType: tipoTeclado,
         decoration: InputDecoration(
           fillColor: Colors.white,
